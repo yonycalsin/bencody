@@ -20,6 +20,7 @@
       "format:another": "prettier --write ./**/*.{json,md,mdx}",
       "format:js": "prettier '**/*.{js,jsx,tsx,ts}' --write",
       "format:styles": "prettier '**/*.{css,scss}' --write",
+      "lint": "run-s lint:*",
       "lint:js": "eslint --ext .js,.jsx,.tsx,.ts .",
       "lint:md": "remark content/",
       "lint:styles": "stylelint src/**/*.css",
