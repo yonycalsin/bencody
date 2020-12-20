@@ -1,6 +1,6 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
-import config from '../../data/SiteConfig';
+import config from 'src/utils/config';
 import '../styles/main.scss';
 
 export default function MainLayout({ children }: More): React.ReactElement {

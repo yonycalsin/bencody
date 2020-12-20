@@ -1,9 +1,10 @@
 const urljoin = require('url-join');
 const path = require('path');
-const config = require('./data/SiteConfig');
+const config = require('./data/site-config.ts');
 
 // Make sure that pathPrefix is not empty
-const validatedPathPrefix = config.pathPrefix === '' ? '/' : config.pathPrefix;
+// const validatedPathPrefix = config.pathPrefix === '' ? '/' : config.pathPrefix;
+const validatedPathPrefix = '.';
 
 module.exports = {
    pathPrefix: validatedPathPrefix,
@@ -22,6 +23,7 @@ module.exports = {
       },
    },
    plugins: [
+      'gatsby-plugin-root-import',
       `gatsby-plugin-sass`,
       {
          resolve: 'gatsby-plugin-sass',

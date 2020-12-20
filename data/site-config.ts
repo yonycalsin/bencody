@@ -1,3 +1,6 @@
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-ignore
+
 const isDev = process.env.NODE_ENV === 'development';
 
 const siteUrl = isDev ? 'http://localhost:8000' : 'https://bencody.com';
@@ -59,11 +62,13 @@ if (config.pathPrefix === '/') {
 }
 
 // Make sure siteUrl doesn't have an ending forward slash
-if (config.siteUrl.substr(-1) === '/')
+if (config.siteUrl.substr(-1) === '/') {
    config.siteUrl = config.siteUrl.slice(0, -1);
+}
 
 // Make sure siteRss has a starting forward slash
-if (config.siteRss && config.siteRss[0] !== '/')
+if (config.siteRss && config.siteRss[0] !== '/') {
    config.siteRss = `/${config.siteRss}`;
+}
 
 module.exports = config;

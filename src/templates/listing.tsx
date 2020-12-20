@@ -1,7 +1,7 @@
 import { graphql, Link } from 'gatsby';
 import React from 'react';
 import { Helmet } from 'react-helmet';
-import config from '../../data/SiteConfig';
+import config from 'src/utils/config';
 import PostListing from '../components/PostListing/PostListing';
 import SEO from '../components/SEO/SEO';
 import Layout from '../layout';
