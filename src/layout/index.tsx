@@ -1,7 +1,7 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
 import config from '../../data/SiteConfig';
-import './index.css';
+import '../styles/main.scss';
 
 export default function MainLayout({ children }: More): React.ReactElement {
    return (

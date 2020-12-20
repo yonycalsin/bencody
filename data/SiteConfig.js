@@ -1,9 +1,13 @@
+const isDev = process.env.NODE_ENV === 'development';
+
+const siteUrl = isDev ? 'http://localhost:8000' : 'https://bencody.com';
+
 const config = {
    siteTitle: 'Bencody Blog', // Site title.
    siteTitleShort: 'Bencody', // Short site title for homescreen (PWA). Preferably should be under 12 characters to prevent truncation.
    siteTitleAlt: 'Bencody Advanced Starter', // Alternative site title for SEO.
    siteLogo: '/logos/logo-1024.png', // Logo used for SEO and manifest.
-   siteUrl: 'https://gatsby-advanced-starter-demo.netlify.com', // Domain of your website without pathPrefix.
+   siteUrl, // Domain of your website without pathPrefix.
    pathPrefix: '/', // Prefixes all links. For cases when deployed to example.github.io/gatsby-advanced-starter/.
    siteDescription: 'A Bencody starter with Advanced design in mind.', // Website description used for RSS feeds/meta description tag.
    siteRss: '/rss.xml', // Path to the RSS file.

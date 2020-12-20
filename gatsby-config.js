@@ -24,6 +24,15 @@ module.exports = {
    plugins: [
       `gatsby-plugin-sass`,
       {
+         resolve: 'gatsby-plugin-sass',
+         options: {
+            // Override the file regex for SASS
+            sassRuleTest: /\.global\.s(a|c)ss$/,
+            // Override the file regex for CSS modules
+            sassRuleModulesTest: /\.mod\.s(a|c)ss$/,
+         },
+      },
+      {
          resolve: `gatsby-plugin-typescript`,
          options: {
             isTSX: true, // defaults to false
