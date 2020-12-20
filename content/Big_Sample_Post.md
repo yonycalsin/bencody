@@ -1,12 +1,12 @@
 ---
-title: "Big Test"
-cover: "5.jpg"
-category: "moar"
-date: "2018-03-01"
-slug: "Big-Sample_Test"
+title: 'Big Test'
+cover: '5.jpg'
+category: 'moar'
+date: '2018-03-01'
+slug: 'Big-Sample_Test'
 tags:
-  - test
-  - huge
+   - test
+   - huge
 ---
 
 # NOTE: This "post" is based on [Markdown Cheatsheet](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet) and is meant to test styling of Markdown generated documents.
@@ -117,7 +117,7 @@ Strikethrough uses two tildes. ~~Scratch this.~~
 1. First ordered list item
 2. Another item
 
-   - Unordered sub-list.
+   -  Unordered sub-list.
 
 3. Actual numbers don't matter, just that it's a number
 
@@ -127,11 +127,11 @@ Strikethrough uses two tildes. ~~Scratch this.~~
 
    Some text that should be aligned with the above item.
 
-- Unordered list can use asterisks
+-  Unordered list can use asterisks
 
-* Or minuses
+*  Or minuses
 
-- Or pluses
+-  Or pluses
 
 <a name="links"/>
 
@@ -196,12 +196,12 @@ Reference-style:
 Here's our logo (hover to see the title text):
 
 Inline-style:
-![alt text](https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "Logo Title Text 1")
+![alt text](https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png 'Logo Title Text 1')
 
 Reference-style:
 ![alt text][logo]
 
-[logo]: https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "Logo Title Text 2"
+[logo]: https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png 'Logo Title Text 2'
 
 <a name="code"/>
 
@@ -234,7 +234,7 @@ But let's throw in a &lt;b&gt;tag&lt;/b&gt;.
 </code></pre>
 
 ```javascript
-var s = "JavaScript syntax highlighting";
+var s = 'JavaScript syntax highlighting';
 alert(s);
 ```
 
