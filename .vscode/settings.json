@@ -1,5 +1,23 @@
 {
    "editor.formatOnSave": true,
    "editor.tabSize": 3,
-   "editor.detectIndentation": false
+   "editor.detectIndentation": false,
+   "eslint.validate": [
+      {
+         "language": "javascript",
+         "autoFix": true
+      },
+      {
+         "language": "javascriptreact",
+         "autoFix": true
+      },
+      {
+         "language": "typescript",
+         "autoFix": true
+      },
+      {
+         "language": "typescriptreact",
+         "autoFix": true
+      }
+   ]
 }
