@@ -1,53 +1,46 @@
 module.exports = {
-   parser: '@typescript-eslint/parser',
-   plugins: ['@typescript-eslint'],
+   parser: '@typescript-eslint/parser', // Specifies the ESLint parser
    extends: [
       'eslint:recommended',
       'plugin:react/recommended',
       'plugin:@typescript-eslint/recommended',
-      // Uncomment the following lines to enable eslint-config-prettier
-      // Is not enabled right now to avoid issues with the Next.js repo
-      'prettier',
       'prettier/@typescript-eslint',
+      'plugin:prettier/recommended',
+      'prettier',
    ],
+   settings: {
+      react: {
+         version: 'detect',
+      },
+   },
    env: {
-      es6: true,
       browser: true,
-      jest: true,
       node: true,
+      es6: true,
+   },
+   plugins: ['@typescript-eslint', 'react'],
+   parserOptions: {
+      ecmaFeatures: {
+         jsx: true,
+      },
+      ecmaVersion: 2018, // Allows for the parsing of modern ECMAScript features
+      sourceType: 'module', // Allows for the use of imports
    },
    rules: {
-      'react/react-in-jsx-scope': 0,
-      'react/display-name': 0,
-      'react/prop-types': 0,
-      '@typescript-eslint/explicit-function-return-type': 0,
-      '@typescript-eslint/explicit-member-accessibility': 0,
-      '@typescript-eslint/indent': 0,
-      '@typescript-eslint/member-delimiter-style': 0,
-      '@typescript-eslint/no-explicit-any': 0,
-      '@typescript-eslint/no-var-requires': 0,
-      '@typescript-eslint/no-use-before-define': 0,
-      'no-console': [
-         2,
-         {
-            allow: ['warn', 'error'],
-         },
-      ],
+      'react/prop-types': 'off', // Disable prop-types as we use TypeScript for type checking
+      '@typescript-eslint/explicit-function-return-type': 'off',
 
-      // Customized
-      '@typescript-eslint/triple-slash-reference': 0,
-      '@typescript-eslint/interface-name-prefix': 0,
-      semi: 1,
-      '@typescript-eslint/ban-ts-ignore': 0,
-      /// Override rules if required to follow `airbnb`
-      '@typescript-eslint/no-unused-vars': [
-         'error',
-         {
-            varsIgnorePattern: 'logger',
-            args: 'none',
-            ignoreRestSiblings: true,
-            argsIgnorePattern: '^_',
-         },
-      ],
+      // Custom
+      'prettier/prettier': 0,
+      '@typescript-eslint/no-explicit-any': 0,
    },
+   overrides: [
+      // Override some TypeScript rules just for .js files
+      {
+         files: ['*.js'],
+         rules: {
+            '@typescript-eslint/no-var-requires': 'off', //
+         },
+      },
+   ],
 };

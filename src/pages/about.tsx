@@ -1,10 +1,10 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
-import Layout from '../layout';
-import About from '../components/About/About';
 import config from '../../data/SiteConfig';
+import About from '../components/About/About';
+import Layout from '../layout';
 
-function AboutPage() {
+function AboutPage(): React.ReactElement {
    return (
       <Layout>
          <div className="about-container">
