@@ -5,7 +5,6 @@ import config from '../../data/SiteConfig';
 import PostListing from '../components/PostListing/PostListing';
 import SEO from '../components/SEO/SEO';
 import Layout from '../layout';
-import './listing.css';
 
 function Listing({ pageContext, data }: More): React.ReactElement {
    function renderPaging() {
