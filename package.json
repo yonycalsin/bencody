@@ -1,12 +1,12 @@
 {
-  "name": "gatsby-starter-advanced",
+  "name": "bencody",
   "version": "2.20.11",
-  "description": "GatsbyJS starter that includes examples for advanced use cases.",
+  "description": "Find up to date snippets for JavaScript & React use cases",
   "keywords": [
     "gatsby"
   ],
   "license": "MIT",
-  "author": "Ruben Harutyunyan <vagr9k@gmail.com>",
+  "author": "Yony Calsin <helloyonycalsin@gmail.com>",
   "main": "n/a",
   "scripts": {
     "build": "gatsby build",
