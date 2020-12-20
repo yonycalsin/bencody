@@ -9,8 +9,6 @@ import SEO from '../components/SEO/SEO';
 import SocialLinks from '../components/SocialLinks/SocialLinks';
 import UserInfo from '../components/UserInfo/UserInfo';
 import Layout from '../layout';
-import './b16-tomorrow-dark.css';
-import './post.css';
 
 export default function PostTemplate({
    data,

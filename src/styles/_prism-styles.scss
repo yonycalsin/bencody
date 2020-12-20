@@ -49,100 +49,95 @@ code[class*='language-'] ::selection {
    border-radius: 0.3em;
 }
 
+pre > code.highlight {
+   outline: 0.4em solid #c66;
+   outline-offset: 0.4em;
+}
+
+/* New Moon */
+
 .token.comment,
 .token.prolog,
 .token.doctype,
-.token.cdata {
-   color: #969896;
+.token.cdata,
+.token.important {
+   color: var(--comment);
 }
 
 .token.punctuation {
-   color: #c5c8c6;
+   color: var(--punctuation);
 }
 
 .token.namespace {
    opacity: 0.7;
 }
 
-.token.operator,
-.token.boolean,
-.token.number {
-   color: #de935f;
-}
-
 .token.property {
-   color: #f0c674;
+   color: var(--property);
 }
 
-.token.tag {
-   color: #81a2be;
+.token.tag,
+.token.constant,
+.token.symbol,
+.token.deleted {
+   color: var(--tag);
 }
 
-.token.string {
-   color: #8abeb7;
+.token.number {
+   color: var(--number);
 }
 
-.token.selector {
-   color: #b294bb;
-}
-
-.token.attr-name {
-   color: #de935f;
-}
-
-.token.entity,
+.token.char,
+.token.builtin,
 .token.url,
-.language-css .token.string,
-.style .token.string {
-   color: #8abeb7;
+.token.inserted {
+   color: var(--code-font-color);
+}
+
+.token.attr-name,
+.token.selector {
+   color: var(--attribute);
 }
 
 .token.attr-value,
-.token.keyword,
-.token.control,
-.token.directive,
-.token.unit {
-   color: #b5bd68;
+.token.string {
+   color: var(--string);
 }
 
-.token.statement,
-.token.regex,
-.token.atrule {
-   color: #8abeb7;
+.token.operator {
+   color: var(--operator);
 }
 
-.token.placeholder,
+.token.atrule,
+.token.keyword {
+   color: var(--keyword);
+}
+
+.token.function {
+   color: var(--function);
+}
+
+.language-css,
+.token.boolean,
+.token.class-name {
+   color: var(--class) !important;
+}
+
+.token.regex {
+   color: var(--keyword);
+}
+
 .token.variable {
-   color: #81a2be;
+   color: var(--variable);
 }
 
-.token.deleted {
-   text-decoration: line-through;
+.token.bold {
+   font-weight: bold;
 }
-
-.token.inserted {
-   border-bottom: 1px dotted #fff;
-   text-decoration: none;
-}
-
 .token.italic {
    font-style: italic;
 }
 
-.token.important,
-.token.bold {
-   font-weight: bold;
-}
-
-.token.important {
-   color: #c66;
-}
-
 .token.entity {
    cursor: help;
-}
-
-pre > code.highlight {
-   outline: 0.4em solid #c66;
-   outline-offset: 0.4em;
 }

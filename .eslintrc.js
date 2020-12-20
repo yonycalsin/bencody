@@ -37,9 +37,10 @@ module.exports = {
    overrides: [
       // Override some TypeScript rules just for .js files
       {
-         files: ['*.js'],
+         files: ['*.js', '*.jsx'],
          rules: {
-            '@typescript-eslint/no-var-requires': 'off', //
+            '@typescript-eslint/no-var-requires': 'off',
+            '@typescript-eslint/explicit-module-boundary-types': 0,
          },
       },
    ],

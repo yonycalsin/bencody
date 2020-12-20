@@ -5,7 +5,6 @@ import config from '../../data/SiteConfig';
 import PostListing from '../components/PostListing/PostListing';
 import SEO from '../components/SEO/SEO';
 import Layout from '../layout';
-import './listing.css';
 
 function Listing({ pageContext, data }: More): React.ReactElement {
    function renderPaging() {
@@ -35,7 +34,9 @@ function Listing({ pageContext, data }: More): React.ReactElement {
       );
    }
 
-   const postEdges = data.allMarkdownRemark.edges;
+   const postEdges = data.latest.edges;
+
+   console.log(data);
 
    return (
       <Layout>
@@ -55,20 +56,22 @@ export default Listing;
 
 /* eslint no-undef: "off" */
 export const listingQuery = graphql`
-   query ListingQuery($skip: Int!, $limit: Int!) {
-      allMarkdownRemark(
-         sort: { fields: [fields___date], order: DESC }
-         limit: $limit
-         skip: $skip
+   query ListingQuery {
+      latest: allMarkdownRemark(
+         limit: 5
+         sort: { fields: [frontmatter___date], order: DESC }
+         filter: { frontmatter: { template: { eq: "post" } } }
       ) {
          edges {
             node {
+               html
+               excerpt
+               timeToRead
                fields {
                   slug
                   date
+                  dateFormated: date(formatString: "MMMM DD, YYYY")
                }
-               excerpt
-               timeToRead
                frontmatter {
                   title
                   tags
