@@ -1,10 +1,10 @@
+import { graphql, Link } from 'gatsby';
 import React from 'react';
 import { Helmet } from 'react-helmet';
-import { graphql, Link } from 'gatsby';
-import Layout from '../layout';
+import config from '../../data/SiteConfig';
 import PostListing from '../components/PostListing/PostListing';
 import SEO from '../components/SEO/SEO';
-import config from '../../data/SiteConfig';
+import Layout from '../layout';
 import './listing.css';
 
 function Listing({ pageContext, data }) {

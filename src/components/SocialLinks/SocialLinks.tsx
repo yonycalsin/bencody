@@ -1,17 +1,17 @@
 import React from 'react';
 import {
-   FacebookShareButton,
-   LinkedinShareButton,
-   TwitterShareButton,
-   TelegramShareButton,
-   RedditShareButton,
-   FacebookShareCount,
-   RedditShareCount,
    FacebookIcon,
-   TwitterIcon,
-   TelegramIcon,
+   FacebookShareButton,
+   FacebookShareCount,
    LinkedinIcon,
+   LinkedinShareButton,
    RedditIcon,
+   RedditShareButton,
+   RedditShareCount,
+   TelegramIcon,
+   TelegramShareButton,
+   TwitterIcon,
+   TwitterShareButton,
 } from 'react-share';
 import urljoin from 'url-join';
 import config from '../../../data/SiteConfig';

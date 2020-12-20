@@ -1,10 +1,10 @@
+import { graphql } from 'gatsby';
 import React from 'react';
 import { Helmet } from 'react-helmet';
-import { graphql } from 'gatsby';
-import Layout from '../layout';
+import config from '../../data/SiteConfig';
 import PostListing from '../components/PostListing/PostListing';
 import SEO from '../components/SEO/SEO';
-import config from '../../data/SiteConfig';
+import Layout from '../layout';
 
 function Landing({ data }) {
    const postEdges = data.allMarkdownRemark.edges;

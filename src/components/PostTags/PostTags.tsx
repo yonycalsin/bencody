@@ -1,6 +1,6 @@
-import React from 'react';
-import _ from 'lodash';
 import { Link } from 'gatsby';
+import _ from 'lodash';
+import React from 'react';
 
 function PostTags({ tags }) {
    return (

@@ -1,7 +1,7 @@
 import React from 'react';
 import './About.css';
 
-function About() {
+function About(): React.ReactElement {
    return (
       <div className="about">
          <h1>

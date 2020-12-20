@@ -1,9 +1,9 @@
+import { graphql } from 'gatsby';
 import React from 'react';
 import { Helmet } from 'react-helmet';
-import { graphql } from 'gatsby';
-import Layout from '../layout';
-import PostListing from '../components/PostListing/PostListing';
 import config from '../../data/SiteConfig';
+import PostListing from '../components/PostListing/PostListing';
+import Layout from '../layout';
 
 export default function CategoryTemplate({ pageContext, data }) {
    const { category } = pageContext;
