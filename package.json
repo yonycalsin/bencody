@@ -15,6 +15,7 @@
       "clean": "rm -rf public && rm -rf .cache",
       "dev": "npm run develop",
       "develop": "gatsby develop",
+      "fetch": "sh ./scripts/git-fetch.sh",
       "format": "run-s format:*",
       "format:another": "prettier --write ./**/*.{json,md,mdx}",
       "format:js": "prettier '**/*.{js,jsx}' --write",
