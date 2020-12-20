@@ -1,8 +1,8 @@
 import moment from 'moment';
 import React from 'react';
 import { Helmet } from 'react-helmet';
+import config from 'src/utils/config';
 import urljoin from 'url-join';
-import config from '../../../data/SiteConfig';
 
 function SEO({ postNode, postPath, postSEO }: More): React.ReactElement {
    let title;

@@ -13,8 +13,8 @@ import {
    TwitterIcon,
    TwitterShareButton,
 } from 'react-share';
+import config from 'src/utils/config';
 import urljoin from 'url-join';
-import config from '../../../data/SiteConfig';
 
 function SocialLinks({ postNode, postPath, mobile }: More): React.ReactElement {
    const post = postNode.frontmatter;

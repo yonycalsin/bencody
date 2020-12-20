@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import ReactDisqusComments from 'react-disqus-comments';
+import config from 'src/utils/config';
 import urljoin from 'url-join';
-import config from '../../../data/SiteConfig';
 
 function Disqus({ postNode }: More): React.ReactElement | null {
    const [toasts, setToasts] = useState<More[]>([]);
