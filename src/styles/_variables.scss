@@ -1,0 +1,20 @@
+:root {
+   /* stylelint-disable value-keyword-case */
+   --code-font-family: Menlo, 'Roboto Mono', Courier New, monospace;
+   /* stylelint-enable value-keyword-case */
+   --code-font-color: #b3b9c5;
+   --code-background-color: #353535;
+   --string: #92d192;
+   --variable: #f2777a;
+   --property: #abb2bf;
+   --number: #fca369;
+   --operator: #ac8d58;
+   --punctuation: #d5d8df;
+   --comment: #848991;
+   --function: #62cfcf;
+   --keyword: #ffeead;
+   --attribute: #ffd479;
+   --class: #e1a6f2;
+   --tag: #6ab0f3;
+   --error: #f2777a;
+}

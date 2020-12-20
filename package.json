@@ -23,7 +23,7 @@
       "lint": "run-s lint:*",
       "lint:js": "eslint --ext .js,.jsx,.tsx,.ts .",
       "lint:md": "remark content/",
-      "lint:styles": "stylelint src/**/*.css",
+      "lint:styles": "stylelint src/**/*.scss",
       "serve": "gatsby serve",
       "type-check": "tsc",
       "write-good": "write-good $(glob 'content/posts/**/*.md')"
