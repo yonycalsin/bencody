@@ -1,7 +1,8 @@
 ---
-title: 'Big Test'
+template: 'post'
+title: 'First Blog'
 cover: '5.jpg'
-category: 'moar'
+category: 'popular'
 date: '2018-03-01'
 slug: 'Big-Sample_Test'
 tags:
@@ -33,6 +34,14 @@ You can play around with Markdown on our [live demo page](http://www.markdown-he
 [Horizontal Rule](#hr)
 [Line Breaks](#lines)
 [YouTube Videos](#videos)
+
+```ts
+class UserService extends CrudService<UserEntity> {
+    contructor(@InjectModel(UserEntity) model: typeof UserEntity) {
+        super(model);
+    }
+}
+```
 
 <a name="headers"/>
 
