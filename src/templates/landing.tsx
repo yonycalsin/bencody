@@ -6,7 +6,7 @@ import PostListing from '../components/PostListing/PostListing';
 import SEO from '../components/SEO/SEO';
 import Layout from '../layout';
 
-function Landing({ data }) {
+function Landing({ data }: More): React.ReactElement {
    const postEdges = data.allMarkdownRemark.edges;
    return (
       <Layout>

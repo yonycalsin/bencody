@@ -5,8 +5,8 @@ category: 'moar'
 date: '2018-03-01'
 slug: 'Big-Sample_Test'
 tags:
-   - test
-   - huge
+    - test
+    - huge
 ---
 
 # NOTE: This "post" is based on [Markdown Cheatsheet](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet) and is meant to test styling of Markdown generated documents.
@@ -117,21 +117,21 @@ Strikethrough uses two tildes. ~~Scratch this.~~
 1. First ordered list item
 2. Another item
 
-   -  Unordered sub-list.
+    - Unordered sub-list.
 
 3. Actual numbers don't matter, just that it's a number
 
-   1. Ordered sub-list
+    1. Ordered sub-list
 
 4. And another item.
 
-   Some text that should be aligned with the above item.
+    Some text that should be aligned with the above item.
 
--  Unordered list can use asterisks
+-   Unordered list can use asterisks
 
-*  Or minuses
+*   Or minuses
 
--  Or pluses
+-   Or pluses
 
 <a name="links"/>
 
@@ -164,6 +164,8 @@ Some text to show that the reference links can follow later.
 [I'm a reference-style link][arbitrary case-insensitive reference text]
 
 [You can use numbers for reference-style link definitions][1]
+
+<!--lint disable no-shortcut-reference-link-->
 
 Or leave it empty and use the [link text itself]
 

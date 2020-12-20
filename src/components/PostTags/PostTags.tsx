@@ -2,7 +2,7 @@ import { Link } from 'gatsby';
 import _ from 'lodash';
 import React from 'react';
 
-function PostTags({ tags }) {
+function PostTags({ tags }: More): React.ReactElement {
    return (
       <div className="post-tag-container">
          {tags &&

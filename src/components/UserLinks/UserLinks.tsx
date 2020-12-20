@@ -1,7 +1,7 @@
 import React from 'react';
 import './UserLinks.css';
 
-function UserLinks({ config, labeled }) {
+function UserLinks({ config, labeled }: More): React.ReactElement {
    function getLinkElements() {
       const { userLinks } = config;
 

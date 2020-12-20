@@ -1,7 +1,7 @@
 import React from 'react';
 import { Follow } from 'react-twitter-widgets';
 
-function UserInfo({ config, expanded }: More) {
+function UserInfo({ config, expanded }: More): React.ReactElement {
    const { userTwitter } = config;
 
    return (

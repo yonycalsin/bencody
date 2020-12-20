@@ -5,7 +5,10 @@ import config from '../../data/SiteConfig';
 import PostListing from '../components/PostListing/PostListing';
 import Layout from '../layout';
 
-export default function TagTemplate({ pageContext, data }) {
+export default function TagTemplate({
+   pageContext,
+   data,
+}: More): React.ReactElement {
    const { tag } = pageContext;
    const postEdges = data.allMarkdownRemark.edges;
    return (

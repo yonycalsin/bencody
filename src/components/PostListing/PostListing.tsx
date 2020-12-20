@@ -1,7 +1,7 @@
 import { Link } from 'gatsby';
 import React from 'react';
 
-function PostListing({ postEdges }) {
+function PostListing({ postEdges }: More): React.ReactElement | null {
    const postList: More[] = [];
 
    postEdges.forEach((postEdge) => {

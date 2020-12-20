@@ -3,7 +3,7 @@ import React from 'react';
 import UserLinks from '../UserLinks/UserLinks';
 import './Footer.css';
 
-function Footer({ config }) {
+function Footer({ config }: More): React.ReactElement | null {
    const url = config.siteRss;
    const { copyright } = config;
    if (!copyright) {

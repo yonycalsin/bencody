@@ -3,7 +3,7 @@ import { Helmet } from 'react-helmet';
 import config from '../../data/SiteConfig';
 import './index.css';
 
-export default function MainLayout({ children }) {
+export default function MainLayout({ children }: More): React.ReactElement {
    return (
       <div className="layout-container">
          <Helmet>

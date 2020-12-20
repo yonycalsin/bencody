@@ -17,7 +17,7 @@ import urljoin from 'url-join';
 import config from '../../../data/SiteConfig';
 import './SocialLinks.css';
 
-function SocialLinks({ postNode, postPath, mobile }: More) {
+function SocialLinks({ postNode, postPath, mobile }: More): React.ReactElement {
    const post = postNode.frontmatter;
    const url = urljoin(config.siteUrl, config.pathPrefix, postPath);
    const iconSize = mobile ? 36 : 48;

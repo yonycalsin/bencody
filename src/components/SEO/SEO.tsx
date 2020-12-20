@@ -4,7 +4,7 @@ import { Helmet } from 'react-helmet';
 import urljoin from 'url-join';
 import config from '../../../data/SiteConfig';
 
-function SEO({ postNode, postPath, postSEO }: More) {
+function SEO({ postNode, postPath, postSEO }: More): React.ReactElement {
    let title;
    let description;
    let image;

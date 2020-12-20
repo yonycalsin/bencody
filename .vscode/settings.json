@@ -19,5 +19,9 @@
          "language": "typescriptreact",
          "autoFix": true
       }
-   ]
+   ],
+
+   "[md]": {
+      "editor.tabSize": 2
+   }
 }

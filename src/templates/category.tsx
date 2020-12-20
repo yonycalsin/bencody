@@ -5,7 +5,10 @@ import config from '../../data/SiteConfig';
 import PostListing from '../components/PostListing/PostListing';
 import Layout from '../layout';
 
-export default function CategoryTemplate({ pageContext, data }) {
+export default function CategoryTemplate({
+   pageContext,
+   data,
+}: More): React.ReactElement {
    const { category } = pageContext;
    const postEdges = data.allMarkdownRemark.edges;
    return (

@@ -12,7 +12,10 @@ import Layout from '../layout';
 import './b16-tomorrow-dark.css';
 import './post.css';
 
-export default function PostTemplate({ data, pageContext }) {
+export default function PostTemplate({
+   data,
+   pageContext,
+}: More): React.ReactElement {
    const { slug } = pageContext;
    const postNode = data.markdownRemark;
    const post = postNode.frontmatter;

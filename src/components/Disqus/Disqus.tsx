@@ -3,7 +3,7 @@ import ReactDisqusComments from 'react-disqus-comments';
 import urljoin from 'url-join';
 import config from '../../../data/SiteConfig';
 
-function Disqus({ postNode }) {
+function Disqus({ postNode }: More): React.ReactElement | null {
    const [toasts, setToasts] = useState<More[]>([]);
 
    function notifyAboutComment() {
