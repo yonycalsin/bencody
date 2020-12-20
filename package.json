@@ -30,6 +30,7 @@
     "lodash": "^4.17.20",
     "moment": "^2.29.1",
     "netlify-cms-app": "^2.13.3",
+    "npm-run-all": "^4.1.5",
     "prismjs": "^1.22.0",
     "react": "^17.0.1",
     "react-disqus-comments": "^1.4.0",
@@ -77,7 +78,9 @@
     "lint:md": "remark content/",
     "write-good": "write-good $(glob 'content/posts/**/*.md')",
     "format:js": "prettier '**/*.{js,jsx}' --write",
-    "format:styles": "prettier '**/*.{css,scss}' --write"
+    "format:styles": "prettier '**/*.{css,scss}' --write",
+    "format:another": "prettier --write ./**/*.{json,md,mdx}",
+    "format": "run-s format:*"
   },
   "remarkConfig": {
     "plugins": [
