@@ -33,6 +33,7 @@ module.exports = {
       // Custom
       'prettier/prettier': 0,
       '@typescript-eslint/no-explicit-any': 0,
+      '@typescript-eslint/explicit-module-boundary-types': 0,
    },
    overrides: [
       // Override some TypeScript rules just for .js files

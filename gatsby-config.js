@@ -1,5 +1,4 @@
 const urljoin = require('url-join');
-const path = require('path');
 const config = require('./data/site-config.ts');
 
 // Make sure that pathPrefix is not empty
