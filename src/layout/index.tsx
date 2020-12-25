@@ -1,16 +1,21 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
+import { Navbar } from 'src/components';
 import config from 'src/utils/config';
 import '../styles/main.scss';
 
-export default function MainLayout({ children }: More): React.ReactElement {
+function MainLayout({ children }: More): React.ReactElement {
    return (
-      <div className="layout-container">
+      <>
          <Helmet>
             <meta name="description" content={config.siteDescription} />
             <html lang="en" />
          </Helmet>
+         <Navbar />
+
          {children}
-      </div>
+      </>
    );
 }
+
+export default MainLayout;

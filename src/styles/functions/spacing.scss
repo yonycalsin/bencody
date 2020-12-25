@@ -1,0 +1,9 @@
+@function space($args...) {
+   $result: null;
+
+   @each $value in $args {
+      $result: $result #{$value * 8}px;
+   }
+
+   @return $result;
+}
