@@ -1,6 +1,7 @@
 import { graphql, Link } from 'gatsby';
 import React from 'react';
 import { Helmet } from 'react-helmet';
+import { Featured } from 'src/components';
 import config from 'src/utils/config';
 import PostListing from '../components/PostListing/PostListing';
 import SEO from '../components/SEO/SEO';
@@ -36,10 +37,15 @@ function Listing({ pageContext, data }: More): React.ReactElement {
 
    const postEdges = data.latest.edges;
 
-   console.log(data);
-
    return (
       <Layout>
+         <div>
+            <div className="container">
+               <h1 className="tac">Programing Languages</h1>
+               <Featured />
+            </div>
+         </div>
+
          <div className="listing-container">
             <div className="posts-container">
                <Helmet title={config.siteTitle} />
