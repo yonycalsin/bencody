@@ -2,7 +2,6 @@ import { graphql } from 'gatsby';
 import React from 'react';
 import { Helmet } from 'react-helmet';
 import config from 'src/utils/config';
-import Disqus from '../components/Disqus/Disqus';
 import Footer from '../components/Footer/Footer';
 import PostTags from '../components/PostTags/PostTags';
 import SEO from '../components/SEO/SEO';
@@ -37,7 +36,7 @@ export default function PostTemplate({
                   <SocialLinks postPath={slug} postNode={postNode} />
                </div>
                <UserInfo config={config} />
-               <Disqus postNode={postNode} />
+               {/* <Disqus postNode={postNode} /> */}
                <Footer config={config} />
             </div>
          </div>

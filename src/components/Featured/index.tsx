@@ -1,13 +1,18 @@
 import { map } from 'lodash';
-import React from 'react';
-import { languages } from 'src/utils/data';
+import React, { FC } from 'react';
 import { Item } from './components';
 import './styles.scss';
 
-const Featured = () => {
+interface Props {
+   dataSource: More[];
+}
+
+const Featured: FC<Props> = (props) => {
+   const { dataSource } = props;
+
    return (
       <div className="featured fx fx-jcsa fx-ww">
-         {map(languages, ({ image, title, slug }, index) => (
+         {map(dataSource, ({ image, title, slug }, index) => (
             <Item
                key={index}
                image={image}
