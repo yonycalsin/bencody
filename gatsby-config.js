@@ -22,7 +22,14 @@ module.exports = {
       },
    },
    plugins: [
-      `gatsby-plugin-styled-components`,
+      {
+         resolve: 'gatsby-plugin-styled-components',
+         options: {
+            displayName: false,
+            fileName: false,
+            namespace: 'becody',
+         },
+      },
       'gatsby-plugin-root-import',
       `gatsby-plugin-sass`,
       {

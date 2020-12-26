@@ -1,5 +1,4 @@
 ---
-template: 'post'
 title: 'First Blog'
 cover: '5.jpg'
 category: 'popular'
@@ -8,6 +7,7 @@ slug: 'Big-Sample_Test'
 tags:
     - test
     - huge
+author: 'yonycalsin'
 ---
 
 # NOTE: This "post" is based on [Markdown Cheatsheet](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet) and is meant to test styling of Markdown generated documents.
