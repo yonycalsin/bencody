@@ -1,0 +1,36 @@
+.featured {
+   width: 100%;
+
+   &-item {
+      border: 1px solid #eee;
+      z-index: 2;
+      transition: all 0.2s ease;
+      display: block;
+      padding: 1rem 1.5rem;
+      background: #fff;
+      border-radius: 6px;
+      box-shadow: 0.2rem 0.25rem 0.75rem 0 rgba(0, 0, 0, 0.1);
+      margin: 0.5rem;
+
+      &:hover {
+         transform: translateY(-1px);
+         box-shadow: 0.5rem 1.25rem 2rem 0 rgba(0, 0, 0, 0.2);
+      }
+
+      img {
+         width: 75px;
+         height: 75px;
+      }
+   }
+
+   &-title {
+      margin: 0;
+      text-align: center;
+      font-size: 1.1rem;
+      font-weight: 500;
+      max-width: 75px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+   }
+}
