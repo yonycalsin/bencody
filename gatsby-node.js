@@ -7,10 +7,14 @@ const siteConfig = require('./data/site-config.ts');
 
 exports.onCreateNode = ({ node, actions, getNode }) => {
    const { createNodeField } = actions;
+
    let slug;
+
    if (node.internal.type === 'MarkdownRemark') {
       const fileNode = getNode(node.parent);
+
       const parsedFilePath = path.parse(fileNode.relativePath);
+
       if (
          Object.prototype.hasOwnProperty.call(node, 'frontmatter') &&
          Object.prototype.hasOwnProperty.call(node.frontmatter, 'title')
@@ -27,27 +31,36 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
       if (Object.prototype.hasOwnProperty.call(node, 'frontmatter')) {
          if (Object.prototype.hasOwnProperty.call(node.frontmatter, 'slug'))
             slug = `/${_.kebabCase(node.frontmatter.slug)}`;
+
          if (Object.prototype.hasOwnProperty.call(node.frontmatter, 'date')) {
             const date = moment(
                node.frontmatter.date,
                siteConfig.dateFromFormat,
             );
-            if (!date.isValid)
+
+            if (!date.isValid) {
                console.warn(`WARNING: Invalid date.`, node.frontmatter);
+            }
 
             createNodeField({ node, name: 'date', value: date.toISOString() });
          }
       }
+
       createNodeField({ node, name: 'slug', value: slug });
    }
 };
 
 exports.createPages = async ({ graphql, actions }) => {
    const { createPage } = actions;
+
    const postPage = path.resolve('src/templates/post.tsx');
+
    const tagPage = path.resolve('src/templates/tag.tsx');
+
    const categoryPage = path.resolve('src/templates/category.tsx');
+
    const homePage = path.resolve('./src/templates/home/index.tsx');
+
    const landingPage = path.resolve('./src/templates/landing.tsx');
 
    // Get a full list of markdown posts
@@ -73,10 +86,12 @@ exports.createPages = async ({ graphql, actions }) => {
 
    if (markdownQueryResult.errors) {
       console.error(markdownQueryResult.errors);
+
       throw markdownQueryResult.errors;
    }
 
    const tagSet = new Set();
+
    const categorySet = new Set();
 
    const postsEdges = markdownQueryResult.data.allMarkdownRemark.edges;
@@ -94,6 +109,7 @@ exports.createPages = async ({ graphql, actions }) => {
       );
 
       if (dateA.isBefore(dateB)) return 1;
+
       if (dateB.isBefore(dateA)) return -1;
 
       return 0;
@@ -101,6 +117,7 @@ exports.createPages = async ({ graphql, actions }) => {
 
    // Paging
    const { postsPerPage } = siteConfig;
+
    if (postsPerPage) {
       const pageCount = Math.ceil(postsEdges.length / postsPerPage);
 
@@ -140,8 +157,11 @@ exports.createPages = async ({ graphql, actions }) => {
 
       // Create post pages
       const nextID = index + 1 < postsEdges.length ? index + 1 : 0;
+
       const prevID = index - 1 >= 0 ? index - 1 : postsEdges.length - 1;
+
       const nextEdge = postsEdges[nextID];
+
       const prevEdge = postsEdges[prevID];
 
       createPage({

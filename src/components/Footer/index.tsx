@@ -55,7 +55,7 @@ function Footer({ config }: More): React.ReactElement | null {
                   as="p"
                   className="tac"
                >
-                  Created by{' '}
+                  Created with ❤️ by{' '}
                   <a
                      href={config.author.url}
                      target="_blank"

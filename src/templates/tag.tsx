@@ -1,25 +1,28 @@
 import { graphql } from 'gatsby';
-import React from 'react';
+import React, { FC } from 'react';
 import { Helmet } from 'react-helmet';
 import config from 'src/utils/config';
-import PostListing from '../components/PostListing/PostListing';
+import PostListing from '../components/PostListing';
 import Layout from '../layout';
 
-export default function TagTemplate({
-   pageContext,
-   data,
-}: More): React.ReactElement {
+const TagTemplate: FC<More> = (props) => {
+   const { pageContext, data } = props;
+
    const { tag } = pageContext;
+
    const postEdges = data.allMarkdownRemark.edges;
+
    return (
       <Layout>
          <div className="tag-container">
             <Helmet title={`Posts tagged as "${tag}" | ${config.siteTitle}`} />
-            <PostListing postEdges={postEdges} />
+            <PostListing edges={postEdges} />
          </div>
       </Layout>
    );
-}
+};
+
+export default TagTemplate;
 
 /* eslint no-undef: "off" */
 export const pageQuery = graphql`

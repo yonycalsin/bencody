@@ -2,7 +2,7 @@ import { graphql } from 'gatsby';
 import React from 'react';
 import { Helmet } from 'react-helmet';
 import config from 'src/utils/config';
-import PostListing from '../components/PostListing/PostListing';
+import PostListing from '../components/PostListing';
 import SEO from '../components/SEO/SEO';
 import Layout from '../layout';
 
@@ -14,7 +14,7 @@ function Landing({ data }: More): React.ReactElement {
             <div className="posts-container">
                <Helmet title={config.siteTitle} />
                <SEO />
-               <PostListing postEdges={postEdges} />
+               <PostListing edges={postEdges} />
             </div>
          </div>
       </Layout>
