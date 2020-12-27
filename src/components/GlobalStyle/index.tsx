@@ -26,7 +26,7 @@ body {
 }
 
 ::selection {
-   background: $primary-color;
+   background: ${(props) => props.theme.colors.primary};
    color: white;
 }
 

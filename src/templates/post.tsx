@@ -1,48 +1,73 @@
 import { graphql } from 'gatsby';
-import React from 'react';
+import React, { FC } from 'react';
 import { Helmet } from 'react-helmet';
+import { Space, Typography } from 'src/components';
+import MainLayout from 'src/layout';
+import { theme } from 'src/utils';
 import config from 'src/utils/config';
-import Footer from '../components/Footer';
+import styled from 'styled-components';
 import PostTags from '../components/PostTags/PostTags';
 import SEO from '../components/SEO/SEO';
 import SocialLinks from '../components/SocialLinks/SocialLinks';
 import UserInfo from '../components/UserInfo/UserInfo';
-import Layout from '../layout';
 
-export default function PostTemplate({
-   data,
-   pageContext,
-}: More): React.ReactElement {
+const Wrapper = styled.div`
+   background: #eee;
+   padding: ${theme.space(5, 0)};
+`;
+
+const PostTemplate: FC<More> = (props) => {
+   const { data, pageContext } = props;
+
    const { slug } = pageContext;
+
    const postNode = data.markdownRemark;
-   const post = postNode.frontmatter;
+
+   const { frontmatter: post, fields } = postNode;
+
    if (!post.id) {
       post.id = slug;
    }
 
    return (
-      <Layout>
-         <div>
+      <MainLayout>
+         <Wrapper>
             <Helmet>
                <title>{`${post.title} | ${config.siteTitle}`}</title>
             </Helmet>
-            <SEO postPath={slug} postNode={postNode} postSEO />
-            <div>
-               <h1>{post.title}</h1>
-               {/* eslint-disable-next-line react/no-danger */}
-               <div dangerouslySetInnerHTML={{ __html: postNode.html }} />
-               <div className="post-meta">
+            <div className="container">
+               <SEO postPath={slug} postNode={postNode} postSEO />
+               <Space
+                  direction="vertical"
+                  style={{ width: '100%' }}
+                  itemProps={{
+                     style: {
+                        width: '100%',
+                     },
+                  }}
+               >
+                  <div className="fx fx-aic fx-jcsb">
+                     <Typography as="h1" textStyle="h2Bold">
+                        {post.title}
+                     </Typography>
+                     <Typography color="gray-600">
+                        {fields.dateFormated}
+                     </Typography>
+                  </div>
                   <PostTags tags={post.tags} />
-                  <SocialLinks postPath={slug} postNode={postNode} />
-               </div>
-               <UserInfo config={config} />
-               {/* <Disqus postNode={postNode} /> */}
-               <Footer config={config} />
+                  <div dangerouslySetInnerHTML={{ __html: postNode.html }} />
+                  <div className="fx fx-aic fx-jcsb">
+                     <SocialLinks postPath={slug} postNode={postNode} />
+                     <UserInfo config={config} expanded />
+                  </div>
+               </Space>
             </div>
-         </div>
-      </Layout>
+         </Wrapper>
+      </MainLayout>
    );
-}
+};
+
+export default PostTemplate;
 
 /* eslint no-undef: "off" */
 export const pageQuery = graphql`
@@ -57,10 +82,12 @@ export const pageQuery = graphql`
             date
             category
             tags
+            author
          }
          fields {
             slug
             date
+            dateFormated: date(formatString: "MMMM DD, YYYY")
          }
       }
    }

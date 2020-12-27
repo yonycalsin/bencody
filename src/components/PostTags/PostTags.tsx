@@ -1,22 +1,28 @@
 import { Link } from 'gatsby';
 import _ from 'lodash';
-import React from 'react';
+import React, { FC } from 'react';
+import { Space } from '..';
 
-function PostTags({ tags }: More): React.ReactElement {
-   return (
-      <div className="post-tag-container">
-         {tags &&
-            tags.map((tag) => (
-               <Link
-                  key={tag}
-                  style={{ textDecoration: 'none' }}
-                  to={`/tags/${_.kebabCase(tag)}`}
-               >
-                  <button type="button">{tag}</button>
-               </Link>
-            ))}
-      </div>
-   );
+interface Props {
+   tags: string[];
 }
+
+const PostTags: FC<Props> = (props) => {
+   const { tags } = props;
+
+   const renderAll = () =>
+      tags &&
+      tags.map((tag) => (
+         <Link
+            key={tag}
+            style={{ textDecoration: 'none' }}
+            to={`/tags/${_.kebabCase(tag)}`}
+         >
+            <button type="button">{tag}</button>
+         </Link>
+      ));
+
+   return <Space>{renderAll()}</Space>;
+};
 
 export default PostTags;

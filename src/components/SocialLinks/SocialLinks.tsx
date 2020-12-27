@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { FC } from 'react';
 import {
    FacebookIcon,
    FacebookShareButton,
@@ -15,18 +15,25 @@ import {
 } from 'react-share';
 import config from 'src/utils/config';
 import urljoin from 'url-join';
+import { Space } from '..';
 
-function SocialLinks({ postNode, postPath, mobile }: More): React.ReactElement {
+const SocialLinks: FC<More> = (props) => {
+   const { postNode, postPath, mobile } = props;
+
    const post = postNode.frontmatter;
+
    const url = urljoin(config.siteUrl, config.pathPrefix, postPath);
+
    const iconSize = mobile ? 36 : 48;
+
    const filter = (count) => (count > 0 ? count : '');
+
    const renderShareCount = (count) => (
       <div className="share-count">{filter(count)}</div>
    );
 
    return (
-      <div className="social-links">
+      <Space>
          <RedditShareButton url={url} title={post.title}>
             <RedditIcon round size={iconSize} />
             <RedditShareCount url={url}>
@@ -52,8 +59,8 @@ function SocialLinks({ postNode, postPath, mobile }: More): React.ReactElement {
          <TelegramShareButton url={url}>
             <TelegramIcon round size={iconSize} />
          </TelegramShareButton>
-      </div>
+      </Space>
    );
-}
+};
 
 export default SocialLinks;

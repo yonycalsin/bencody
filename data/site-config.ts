@@ -23,7 +23,7 @@ const config = {
    postsPerPage: 4, // Amount of posts displayed per listing page.
    userName: 'Advanced User', // Username to display in the author segment.
    userEmail: 'AdvancedUser@example.com', // Email used for RSS feed's author segment
-   userTwitter: '', // Optionally renders "Follow Me" in the UserInfo segment.
+   userTwitter: 'yonycalsin', // Optionally renders "Follow Me" in the UserInfo segment.
    userLocation: 'North Pole, Earth', // User location to display in the author segment.
    userAvatar: 'https://api.adorable.io/avatars/150/test.png', // User avatar to display in the author segment.
    userDescription:
@@ -49,9 +49,12 @@ const config = {
          image: 'https://cdn.svgporn.com/logos/google-gmail.svg',
       },
    ],
-   copyright: 'Copyright © 2020. Advanced User', // Copyright string for the footer of the website and RSS feed.
+   copyright: 'Copyright © 2021 - Bencody Team', // Copyright string for the footer of the website and RSS feed.
    themeColor: '#c62828', // Used for setting manifest and progress theme colors.
    backgroundColor: '#e0e0e0', // Used for setting manifest background color.
+   author: {
+      url: 'https://github.com/yonycalsin',
+   },
 };
 
 // Validate
