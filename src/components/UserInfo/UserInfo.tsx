@@ -1,8 +1,15 @@
-import React from 'react';
+import React, { FC } from 'react';
 import { Follow } from 'react-twitter-widgets';
 
-function UserInfo({ config, expanded }: More): React.ReactElement {
-   const { userTwitter } = config;
+interface Props {
+   config: More;
+   expanded?: boolean;
+}
+
+const UserInfo: FC<Props> = (props) => {
+   const { config, expanded } = props;
+
+   const { userTwitter = 'yonycalsin' } = config;
 
    return (
       <Follow
@@ -10,6 +17,6 @@ function UserInfo({ config, expanded }: More): React.ReactElement {
          options={{ count: expanded ? true : 'none' }}
       />
    );
-}
+};
 
 export default UserInfo;

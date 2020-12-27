@@ -17,7 +17,10 @@ const UserLinks: FC<More> = (props) => {
             <Avatar
                shape="square"
                image={link.image}
-               ImageProps={{ alt: link.label, title: link.label }}
+               ImageProps={{
+                  alt: link.label,
+                  title: link.label,
+               }}
                objectFit="contain"
             />
          </a>

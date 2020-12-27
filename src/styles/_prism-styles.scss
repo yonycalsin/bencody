@@ -28,20 +28,14 @@ pre[class*='language-'] {
    overflow: auto;
 }
 
-pre[class*='language-']::-moz-selection,
-pre[class*='language-'] ::-moz-selection,
-code[class*='language-']::-moz-selection,
-code[class*='language-'] ::-moz-selection {
-   text-shadow: none;
-   background: #b4b7b4;
-}
-
-pre[class*='language-']::selection,
-pre[class*='language-'] ::selection,
-code[class*='language-']::selection,
-code[class*='language-'] ::selection {
-   text-shadow: none;
-   background: #b4b7b4;
+pre,
+code {
+   &[class*='language-']::selection {
+      &::selection {
+         text-shadow: none;
+         background: red;
+      }
+   }
 }
 
 :not(pre) > code[class*='language-'] {
