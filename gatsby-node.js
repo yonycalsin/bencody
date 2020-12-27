@@ -185,7 +185,9 @@ exports.createPages = async ({ graphql, actions }) => {
       createPage({
          path: `/tags/${_.kebabCase(tag)}/`,
          component: tagPage,
-         context: { tag },
+         context: {
+            tag,
+         },
       });
    });
 
