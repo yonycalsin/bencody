@@ -11,10 +11,3 @@ export const wrapRootElement = ({ element }) => (
       {element}
    </ThemeProvider>
 );
-
-export const wrapPageElement = ({ element }) => (
-   <ThemeProvider theme={theme}>
-      <GlobalStyle />
-      {element}
-   </ThemeProvider>
-);
