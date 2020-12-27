@@ -32,18 +32,21 @@ const config = {
    userLinks: [
       {
          label: 'GitHub',
-         url: 'https://github.com/yonycalsin/bencody',
+         url: 'https://github.com/yonycalsin',
          iconClassName: 'fa fa-github',
+         image: 'https://cdn.svgporn.com/logos/github-icon.svg',
       },
       {
          label: 'Twitter',
          url: 'https://twitter.com/yonycalsin',
          iconClassName: 'fa fa-twitter',
+         image: 'https://cdn.svgporn.com/logos/twitter.svg',
       },
       {
          label: 'Email',
          url: 'mailto:helloyonycalsin@gmail.com',
          iconClassName: 'fa fa-envelope',
+         image: 'https://cdn.svgporn.com/logos/google-gmail.svg',
       },
    ],
    copyright: 'Copyright © 2020. Advanced User', // Copyright string for the footer of the website and RSS feed.

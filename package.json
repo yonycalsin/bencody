@@ -9,11 +9,12 @@
    "author": "Yony Calsin <helloyonycalsin@gmail.com>",
    "main": "n/a",
    "scripts": {
+      "boot": "run-s clean build start",
       "build": "gatsby build",
       "build:gh": "npm run clean && npm run build:pp && gh-pages -d public",
       "build:pp": "gatsby build --prefix-paths",
       "clean": "rm -rf public && rm -rf .cache",
-      "dev": "npm run develop",
+      "dev": "run-s clean develop",
       "develop": "gatsby develop",
       "fetch": "sh ./scripts/git-fetch.sh",
       "format": "run-s format:*",
@@ -25,6 +26,7 @@
       "lint:md": "remark content/",
       "lint:styles": "stylelint -s scss src/**/*.scss",
       "serve": "gatsby serve",
+      "start": "serve -s public",
       "type-check": "tsc",
       "write-good": "write-good $(glob 'content/posts/**/*.md')"
    },

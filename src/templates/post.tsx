@@ -2,7 +2,7 @@ import { graphql } from 'gatsby';
 import React from 'react';
 import { Helmet } from 'react-helmet';
 import config from 'src/utils/config';
-import Footer from '../components/Footer/Footer';
+import Footer from '../components/Footer';
 import PostTags from '../components/PostTags/PostTags';
 import SEO from '../components/SEO/SEO';
 import SocialLinks from '../components/SocialLinks/SocialLinks';
