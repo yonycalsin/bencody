@@ -6,8 +6,6 @@ const Wrapper = styled.article`
    background: ${(props) => props.theme.colors.white};
    border-radius: 7px;
 
-   border: 1px solid #eee;
-
    pre[class*='language-'] {
       margin: 0;
    }

@@ -4,7 +4,9 @@ import { Helmet } from 'react-helmet';
 import { FeaturedListing, PostListing } from 'src/components';
 import MainLayout from 'src/layout';
 import config from 'src/utils/config';
-import { languages } from 'src/utils/data';
+import dataSource from 'src/utils/data';
+
+const { languages } = dataSource;
 
 const Home: FC<More> = (props) => {
    const { data, pageContext } = props;

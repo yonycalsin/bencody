@@ -9,7 +9,7 @@ const Wrapper = styled.div`
 `;
 
 const OwnPost = styled(Post)`
-   margin-bottom: 20px;
+   margin-bottom: ${theme.space(5)};
 `;
 
 interface Props {

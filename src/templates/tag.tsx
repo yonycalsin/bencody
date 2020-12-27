@@ -14,10 +14,11 @@ const TagTemplate: FC<More> = (props) => {
 
    return (
       <Layout>
-         <div className="tag-container">
-            <Helmet title={`Posts tagged as "${tag}" | ${config.siteTitle}`} />
-            <PostListing edges={postEdges} />
+         <Helmet title={`Posts tagged as "${tag}" | ${config.siteTitle}`} />
+         <div className="container">
+            <h1 className="tac">Posts tagged as {`"${tag}"`} </h1>
          </div>
+         <PostListing edges={postEdges} />
       </Layout>
    );
 };
@@ -35,17 +36,21 @@ export const pageQuery = graphql`
          totalCount
          edges {
             node {
+               excerpt(format: HTML)
+               timeToRead
                fields {
                   slug
                   date
+                  dateFormated: date(formatString: "MMMM DD, YYYY")
                }
-               excerpt
-               timeToRead
                frontmatter {
                   title
                   tags
                   cover
                   date
+                  language
+                  template
+                  author
                }
             }
          }
