@@ -1,6 +1,6 @@
-import clsx from 'clsx';
 import { Link } from 'gatsby';
 import React, { Component } from 'react';
+import { Actions, Brand, Container, Navigation, Wrapper } from './elements';
 
 const menuLinks = [
    {
@@ -38,21 +38,21 @@ class Navbar extends Component {
       const { scrolled } = this.state;
 
       return (
-         <nav className={clsx('navbar', { scrolled })}>
-            <div className="container fx fx-aic fx-jcsb">
-               <div className="brand">
-                  <Link to="/">
+         <Wrapper scrolled={scrolled}>
+            <Container className="container fx fx-aic fx-jcsb">
+               <Brand>
+                  <Link to="/" className="fx fx-cc">
                      <img src="https://i.ibb.co/R4gX38Y/image.png" />
                   </Link>
-               </div>
-               <div className="navigation fx fx-cc">
+               </Brand>
+               <Navigation className="fx fx-cc">
                   {menuLinks.map((link) => (
                      <Link key={link.name} to={link.link}>
                         {link.name}
                      </Link>
                   ))}
-               </div>
-               <div className="actions fx fx-cc">
+               </Navigation>
+               <Actions className="fx fx-cc">
                   <a
                      target="_blank"
                      rel="noopener noreferrer"
@@ -67,9 +67,9 @@ class Navbar extends Component {
                   >
                      <img src="https://image.flaticon.com/icons/svg/733/733579.svg" />
                   </a>
-               </div>
-            </div>
-         </nav>
+               </Actions>
+            </Container>
+         </Wrapper>
       );
    }
 }
