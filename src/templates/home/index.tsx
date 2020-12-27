@@ -1,10 +1,10 @@
 import { graphql } from 'gatsby';
 import React, { FC } from 'react';
 import { Helmet } from 'react-helmet';
+import { FeaturedListing, PostListing } from 'src/components';
 import MainLayout from 'src/layout';
 import config from 'src/utils/config';
 import { languages } from 'src/utils/data';
-import { Featureds, Posts } from './components';
 
 const Home: FC<More> = (props) => {
    const { data } = props;
@@ -14,8 +14,8 @@ const Home: FC<More> = (props) => {
    return (
       <MainLayout>
          <Helmet title={config.siteTitle} />
-         <Featureds title="Programing Languages" dataSource={languages} />
-         <Posts edges={postEdges} />
+         <FeaturedListing title="Programing Languages" dataSource={languages} />
+         <PostListing edges={postEdges} />
       </MainLayout>
    );
 };

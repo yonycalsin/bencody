@@ -5,29 +5,31 @@ const config = require('./data/site-config.ts');
 // const validatedPathPrefix = config.pathPrefix === '' ? '/' : config.pathPrefix;
 const validatedPathPrefix = '.';
 
+const siteMetadata = {
+   siteUrl: urljoin(config.siteUrl, config.pathPrefix),
+   rssMetadata: {
+      site_url: urljoin(config.siteUrl, config.pathPrefix),
+      feed_url: urljoin(config.siteUrl, config.pathPrefix, config.siteRss),
+      title: config.siteTitle,
+      description: config.siteDescription,
+      image_url: `${urljoin(
+         config.siteUrl,
+         config.pathPrefix,
+      )}/logos/logo-512.png`,
+      copyright: config.copyright,
+   },
+};
+
 module.exports = {
    pathPrefix: validatedPathPrefix,
-   siteMetadata: {
-      siteUrl: urljoin(config.siteUrl, config.pathPrefix),
-      rssMetadata: {
-         site_url: urljoin(config.siteUrl, config.pathPrefix),
-         feed_url: urljoin(config.siteUrl, config.pathPrefix, config.siteRss),
-         title: config.siteTitle,
-         description: config.siteDescription,
-         image_url: `${urljoin(
-            config.siteUrl,
-            config.pathPrefix,
-         )}/logos/logo-512.png`,
-         copyright: config.copyright,
-      },
-   },
+   siteMetadata,
    plugins: [
       {
          resolve: 'gatsby-plugin-styled-components',
          options: {
             displayName: false,
             fileName: false,
-            namespace: 'becody',
+            namespace: 'bencody',
             ssr: true,
          },
       },

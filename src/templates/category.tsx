@@ -1,27 +1,30 @@
 import { graphql } from 'gatsby';
-import React from 'react';
+import React, { FC } from 'react';
 import { Helmet } from 'react-helmet';
 import config from 'src/utils/config';
-import PostListing from '../components/PostListing/PostListing';
+import PostListing from '../components/PostListing';
 import Layout from '../layout';
 
-export default function CategoryTemplate({
-   pageContext,
-   data,
-}: More): React.ReactElement {
+const CategoryTemplate: FC<More> = (props) => {
+   const { pageContext, data } = props;
+
    const { category } = pageContext;
+
    const postEdges = data.allMarkdownRemark.edges;
+
    return (
       <Layout>
          <div className="category-container">
             <Helmet
                title={`Posts in category "${category}" | ${config.siteTitle}`}
             />
-            <PostListing postEdges={postEdges} />
+            <PostListing edges={postEdges} />
          </div>
       </Layout>
    );
-}
+};
+
+export default CategoryTemplate;
 
 /* eslint no-undef: "off" */
 export const pageQuery = graphql`

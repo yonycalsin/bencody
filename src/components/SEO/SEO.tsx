@@ -1,10 +1,12 @@
 import moment from 'moment';
-import React from 'react';
+import React, { FC } from 'react';
 import { Helmet } from 'react-helmet';
 import config from 'src/utils/config';
 import urljoin from 'url-join';
 
-function SEO({ postNode, postPath, postSEO }: More): React.ReactElement {
+const SEO: FC<More> = (props) => {
+   const { postNode, postPath, postSEO } = props;
+
    let title;
    let description;
    let image;
@@ -140,6 +142,6 @@ function SEO({ postNode, postPath, postSEO }: More): React.ReactElement {
          <meta name="twitter:image" content={image} />
       </Helmet>
    );
-}
+};
 
 export default SEO;

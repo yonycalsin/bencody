@@ -16,7 +16,7 @@ interface Props {
    edges: More[];
 }
 
-const Posts: FC<Props> = (props) => {
+const PostListing: FC<Props> = (props) => {
    const { edges } = props;
 
    return (
@@ -30,4 +30,4 @@ const Posts: FC<Props> = (props) => {
    );
 };
 
-export default Posts;
+export default PostListing;

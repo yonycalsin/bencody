@@ -6,7 +6,7 @@ interface Props {
    dataSource: More[];
 }
 
-const Featureds: FC<Props> = (props) => {
+const FeaturedListing: FC<Props> = (props) => {
    const { title, dataSource } = props;
 
    return (
@@ -19,4 +19,4 @@ const Featureds: FC<Props> = (props) => {
    );
 };
 
-export default Featureds;
+export default FeaturedListing;
