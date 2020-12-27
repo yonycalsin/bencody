@@ -1,21 +1,36 @@
-import React from 'react';
+import React, { FC } from 'react';
+import { Avatar, Space } from '..';
 
-function UserLinks({ config, labeled }: More): React.ReactElement | null {
+const UserLinks: FC<More> = (props) => {
+   const { config } = props;
+
    function getLinkElements() {
       const { userLinks } = config;
 
       return userLinks.map((link) => (
-         <a href={link.url} key={link.label}>
-            <button type="button">{labeled ? link.label : ''}</button>
+         <a
+            href={link.url}
+            key={link.label}
+            target="_blank"
+            rel="noopener noreferrer"
+         >
+            <Avatar
+               shape="square"
+               image={link.image}
+               ImageProps={{ alt: link.label, title: link.label }}
+               objectFit="contain"
+            />
          </a>
       ));
    }
 
    const { userLinks } = config;
+
    if (!userLinks) {
       return null;
    }
-   return <div className="user-links">{getLinkElements()}</div>;
-}
+
+   return <Space>{getLinkElements()}</Space>;
+};
 
 export default UserLinks;

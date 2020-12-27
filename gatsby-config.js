@@ -28,6 +28,7 @@ module.exports = {
             displayName: false,
             fileName: false,
             namespace: 'becody',
+            ssr: true,
          },
       },
       'gatsby-plugin-root-import',
