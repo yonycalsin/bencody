@@ -25,7 +25,7 @@ const Post: FC<Props> = (props) => {
          <Header data={data} />
          <div
             dangerouslySetInnerHTML={{
-               __html: data.html,
+               __html: data.excerpt,
             }}
          ></div>
          <Footer data={data} />
