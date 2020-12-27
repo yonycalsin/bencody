@@ -204,7 +204,7 @@ exports.createPages = async ({ graphql, actions }) => {
 
       let siteTitle = `${title} Libraries`;
 
-      const dataSource = libraries[slug] ?? [];
+      const dataSource = libraries[slug] || [];
 
       if (_.isEmpty(dataSource)) {
          siteTitle = `${title} Language`;
