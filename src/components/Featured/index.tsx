@@ -5,10 +5,11 @@ import './styles.scss';
 
 interface Props {
    dataSource: More[];
+   prefixUrl?: string;
 }
 
 const Featured: FC<Props> = (props) => {
-   const { dataSource } = props;
+   const { dataSource, prefixUrl } = props;
 
    return (
       <div className="featured fx fx-jcsa fx-ww">
@@ -17,7 +18,7 @@ const Featured: FC<Props> = (props) => {
                key={index}
                image={image}
                title={title}
-               path={`/language/${slug}`}
+               path={prefixUrl + slug}
             />
          ))}
       </div>

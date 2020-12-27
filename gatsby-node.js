@@ -4,6 +4,9 @@ const path = require('path');
 const _ = require('lodash');
 const moment = require('moment');
 const siteConfig = require('./data/site-config.ts');
+const dataSource = require('./data/data-source.ts');
+
+const { languages, libraries } = dataSource;
 
 exports.onCreateNode = ({ node, actions, getNode }) => {
    const { createNodeField } = actions;
@@ -192,6 +195,31 @@ exports.createPages = async ({ graphql, actions }) => {
          path: `/categories/${_.kebabCase(category)}/`,
          component: categoryPage,
          context: { category },
+      });
+   });
+
+   // Programing Languages - Pages
+   languages.forEach((language) => {
+      const { slug, title } = language;
+
+      let siteTitle = `${title} Libraries`;
+
+      const dataSource = libraries[slug] ?? [];
+
+      if (_.isEmpty(dataSource)) {
+         siteTitle = `${title} Language`;
+      }
+
+      createPage({
+         path: `/language/${slug}`,
+         component: homePage,
+         context: {
+            language: slug,
+            featured: {
+               title: siteTitle,
+               dataSource,
+            },
+         },
       });
    });
 };
