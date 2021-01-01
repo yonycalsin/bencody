@@ -12,7 +12,6 @@ import SocialLinks from '../components/SocialLinks/SocialLinks';
 import UserInfo from '../components/UserInfo/UserInfo';
 
 const Wrapper = styled.div`
-   background: #eee;
    padding: ${theme.space(5, 0)};
 `;
 

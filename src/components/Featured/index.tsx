@@ -12,7 +12,7 @@ const Featured: FC<Props> = (props) => {
    const { dataSource, prefixUrl } = props;
 
    return (
-      <div className="featured fx fx-jcsa fx-ww">
+      <div className="featured fx fx-jcc fx-ww">
          {map(dataSource, ({ image, title, slug }, index) => (
             <Item
                key={index}

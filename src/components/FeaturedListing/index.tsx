@@ -2,7 +2,7 @@ import React, { FC } from 'react';
 import { Featured } from 'src/components';
 
 interface Props {
-   title: string;
+   title?: string;
    dataSource: More[];
    prefixUrl?: string;
 }

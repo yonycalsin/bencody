@@ -6,7 +6,7 @@ const moment = require('moment');
 const siteConfig = require('./data/site-config.ts');
 const dataSource = require('./data/data-source.ts');
 
-const { languages, libraries } = dataSource;
+const { languages } = dataSource;
 
 exports.onCreateNode = ({ node, actions, getNode }) => {
    const { createNodeField } = actions;
@@ -96,6 +96,8 @@ exports.createPages = async ({ graphql, actions }) => {
    const tagSet = new Set();
 
    const categorySet = new Set();
+
+   const librarySet = new Set();
 
    const postsEdges = markdownQueryResult.data.allMarkdownRemark.edges;
 
@@ -202,14 +204,21 @@ exports.createPages = async ({ graphql, actions }) => {
 
    // Programing Languages - Pages
    languages.forEach((language) => {
-      const { slug, title } = language;
+      const { slug, title, libraries } = language;
 
       let siteTitle = `${title} Libraries`;
 
-      const dataSource = libraries[slug] || [];
-
-      if (_.isEmpty(dataSource)) {
+      if (_.isEmpty(libraries)) {
          siteTitle = `${title} Language`;
+      }
+
+      if (_.isArray(libraries)) {
+         libraries.forEach((library) => {
+            librarySet.add({
+               ...library,
+               language,
+            });
+         });
       }
 
       createPage({
@@ -219,7 +228,27 @@ exports.createPages = async ({ graphql, actions }) => {
             language: slug,
             featured: {
                title: siteTitle,
-               dataSource,
+               dataSource: libraries,
+            },
+         },
+      });
+   });
+
+   // Libraries
+   librarySet.forEach((library) => {
+      const { language, slug, title } = library;
+
+      createPage({
+         path: `/language/${language.slug}/library/${slug}`,
+         component: homePage,
+         context: {
+            // Variables
+            language: language.slug,
+            library: slug,
+
+            featured: {
+               title: `${language.title} - ${title}`,
+               dataSource: [],
             },
          },
       });
