@@ -15,7 +15,12 @@ const libraries = {
       {
          slug: 'express-js',
          image: 'https://cdn.svgporn.com/logos/express.svg',
-         title: 'Express Js',
+         title: 'ExpressJS',
+      },
+      {
+         slug: 'nest-js',
+         image: 'https://cdn.svgporn.com/logos/nestjs.svg',
+         title: 'NestJS',
       },
    ],
 };
@@ -25,18 +30,7 @@ const languages = [
       slug: 'javascript',
       image: 'https://cdn.svgporn.com/logos/javascript.svg',
       title: 'Javascript',
-      libraries: [
-         {
-            slug: 'react-js',
-            image: 'https://cdn.svgporn.com/logos/react.svg',
-            title: 'React Js',
-         },
-         {
-            slug: 'vue-js',
-            image: 'https://cdn.svgporn.com/logos/vue.svg',
-            title: 'Vue Js',
-         },
-      ],
+      libraries: libraries.javascript,
    },
    {
       slug: 'typescript',
@@ -47,13 +41,7 @@ const languages = [
       slug: 'node-js',
       image: 'https://cdn.svgporn.com/logos/nodejs-icon.svg',
       title: 'Node Js',
-      libraries: [
-         {
-            slug: 'express-js',
-            image: 'https://cdn.svgporn.com/logos/express.svg',
-            title: 'Express Js',
-         },
-      ],
+      libraries: libraries['node-js'],
    },
    {
       slug: 'python',
@@ -104,7 +92,6 @@ const languages = [
 
 const dataSource = {
    languages,
-   libraries,
 };
 
 module.exports = dataSource;

@@ -5,9 +5,8 @@ const _ = require('lodash');
 const moment = require('moment');
 const siteConfig = require('./data/site-config.ts');
 const dataSource = require('./data/data-source.ts');
-const { lang } = require('moment');
 
-const { languages, libraries } = dataSource;
+const { languages } = dataSource;
 
 exports.onCreateNode = ({ node, actions, getNode }) => {
    const { createNodeField } = actions;
@@ -205,18 +204,16 @@ exports.createPages = async ({ graphql, actions }) => {
 
    // Programing Languages - Pages
    languages.forEach((language) => {
-      const { slug, title } = language;
+      const { slug, title, libraries } = language;
 
       let siteTitle = `${title} Libraries`;
 
-      const dataSource = libraries[slug] || [];
-
-      if (_.isEmpty(dataSource)) {
+      if (_.isEmpty(libraries)) {
          siteTitle = `${title} Language`;
       }
 
-      if (_.isArray(language.libraries)) {
-         language.libraries.forEach((library) => {
+      if (_.isArray(libraries)) {
+         libraries.forEach((library) => {
             librarySet.add({
                ...library,
                language,
@@ -231,7 +228,7 @@ exports.createPages = async ({ graphql, actions }) => {
             language: slug,
             featured: {
                title: siteTitle,
-               dataSource,
+               dataSource: libraries,
             },
          },
       });
