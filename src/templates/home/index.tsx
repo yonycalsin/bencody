@@ -18,7 +18,9 @@ const Home: FC<More> = (props) => {
 
    const title = pageContext.featured?.title ?? 'Programing Languages';
 
-   const dataSource = pageContext.featured?.dataSource ?? languages;
+   const dataSource = isLanguagePage
+      ? pageContext.featured?.dataSource ?? []
+      : languages;
 
    const prefixUrl = isLanguagePage
       ? `/language/${pageContext.language}/library/`
