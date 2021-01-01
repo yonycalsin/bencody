@@ -1,5 +1,5 @@
 import { graphql } from 'gatsby';
-import { isEmpty } from 'lodash';
+import { find, isEmpty } from 'lodash';
 import React, { FC } from 'react';
 import { Helmet } from 'react-helmet';
 import { FeaturedListing, PostListing, Typography } from 'src/components';
@@ -26,14 +26,20 @@ const Home: FC<More> = (props) => {
 
    const hasEmpty = isEmpty(postEdges);
 
-   const notFoundTitle = pageContext.library ?? pageContext.language ?? '';
+   const languageData = find(languages, { slug: pageContext.language });
+
+   const libraryData = find(languageData?.libraries, {
+      slug: pageContext.library,
+   });
+
+   const notFoundTitle = libraryData?.title ?? languageData?.title ?? '';
 
    return (
       <MainLayout>
          <Helmet title={config.siteTitle} />
          <FeaturedListing
             title={hasEmpty ? undefined : title}
-            dataSource={dataSource}
+            dataSource={hasEmpty ? [] : dataSource}
             prefixUrl={prefixUrl}
          />
 

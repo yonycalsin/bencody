@@ -247,7 +247,7 @@ exports.createPages = async ({ graphql, actions }) => {
             library: slug,
 
             featured: {
-               title: `${language.title} - ${title} library`,
+               title: `${language.title} - ${title}`,
                dataSource: [],
             },
          },
