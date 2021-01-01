@@ -25,6 +25,18 @@ const languages = [
       slug: 'javascript',
       image: 'https://cdn.svgporn.com/logos/javascript.svg',
       title: 'Javascript',
+      libraries: [
+         {
+            slug: 'react-js',
+            image: 'https://cdn.svgporn.com/logos/react.svg',
+            title: 'React Js',
+         },
+         {
+            slug: 'vue-js',
+            image: 'https://cdn.svgporn.com/logos/vue.svg',
+            title: 'Vue Js',
+         },
+      ],
    },
    {
       slug: 'typescript',
@@ -35,6 +47,13 @@ const languages = [
       slug: 'node-js',
       image: 'https://cdn.svgporn.com/logos/nodejs-icon.svg',
       title: 'Node Js',
+      libraries: [
+         {
+            slug: 'express-js',
+            image: 'https://cdn.svgporn.com/logos/express.svg',
+            title: 'Express Js',
+         },
+      ],
    },
    {
       slug: 'python',

@@ -5,6 +5,7 @@ const _ = require('lodash');
 const moment = require('moment');
 const siteConfig = require('./data/site-config.ts');
 const dataSource = require('./data/data-source.ts');
+const { lang } = require('moment');
 
 const { languages, libraries } = dataSource;
 
@@ -96,6 +97,8 @@ exports.createPages = async ({ graphql, actions }) => {
    const tagSet = new Set();
 
    const categorySet = new Set();
+
+   const librarySet = new Set();
 
    const postsEdges = markdownQueryResult.data.allMarkdownRemark.edges;
 
@@ -212,6 +215,15 @@ exports.createPages = async ({ graphql, actions }) => {
          siteTitle = `${title} Language`;
       }
 
+      if (_.isArray(language.libraries)) {
+         language.libraries.forEach((library) => {
+            librarySet.add({
+               ...library,
+               language,
+            });
+         });
+      }
+
       createPage({
          path: `/language/${slug}`,
          component: homePage,
@@ -220,6 +232,26 @@ exports.createPages = async ({ graphql, actions }) => {
             featured: {
                title: siteTitle,
                dataSource,
+            },
+         },
+      });
+   });
+
+   // Libraries
+   librarySet.forEach((library) => {
+      const { language, slug, title } = library;
+
+      createPage({
+         path: `/language/${language.slug}/library/${slug}`,
+         component: homePage,
+         context: {
+            // Variables
+            language: language.slug,
+            library: slug,
+
+            featured: {
+               title: `${language.title} - ${title} library`,
+               dataSource: [],
             },
          },
       });
